@@ -4,17 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN ./mvnw clean package -DskipTests
-
-EXPOSE 8080
-
-CMD ["java", "-jar", "target/project3-0.0.1-SNAPSHOT.jar"]FROM eclipse-temurin:26-jdk
-
-WORKDIR /app
-
-COPY . .
-
-RUN ./mvnw clean package -DskipTests
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 
 EXPOSE 8080
 
